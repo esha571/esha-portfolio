@@ -1,38 +1,81 @@
+/* Add keyframes for animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes bounceIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Apply animations to elements */
 .App {
+  font-family: Arial, sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  background-color:gray;
+  padding: 10px;
+  color: white;
+  animation: fadeIn 1s ease-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.image-container img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  animation: bounceIn 1s ease-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.name-title h1, .name-title h2 {
+  margin: 0;
+}
+
+main {
+  padding: 10px;
+}
+
+section {
+  margin: 10px 0;
+  animation: slideIn 1s ease-out;
+}
+
+.contact, .objective, .education, .work-experience, .skills {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  color:black;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  animation: fadeIn 1s ease-out;
+  margin: 10px 0;
+}
+
+/* Add some responsive design */
+@media (min-width: 768px) {
+  .header-content {
+    flex-direction: row;
   }
-  to {
-    transform: rotate(360deg);
+
+  .image-container, .name-title {
+    margin: 10px;
   }
 }
